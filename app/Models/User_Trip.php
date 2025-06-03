@@ -8,8 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class User_Trip extends Model
 {
     use HasFactory;
-    class UserTrip extends Model
-{
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id');
@@ -39,6 +37,5 @@ class User_Trip extends Model
     {
         return $this->hasOne(BookingFlight::class, 'user_trip_id');
     }
-}}
+}
 
-    

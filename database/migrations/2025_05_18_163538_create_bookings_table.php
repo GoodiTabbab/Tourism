@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('bookings', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_trip_id')->constrained('user_trip')->onDelete('cascade');
             $table->string('passport_number');
             $table->string('airline');
             $table->string('departure_time');
@@ -24,7 +25,7 @@ return new class extends Migration
             $table->string('ticket_price');
             $table->string('allowed_baggage');
             $table->enum('flight_status', ['On time', 'delayed','canceled'])->default('On time');
-            
+
             $table->timestamps();
         });
     }
