@@ -63,4 +63,10 @@ class User extends Authenticatable
     public function favorites(){
         return $this->hasMany('Favorite','user_id');
     }
+    public function userTrips()
+    {
+        return $this->hasMany(UserTrip::class,'user_id');
+    }
+
+
 }

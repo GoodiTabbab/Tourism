@@ -17,4 +17,11 @@ class Activity extends Model
     'equipment_availability',
     'age_group',
     ];
+    public function tripActivities()
+    {
+        return $this->hasMany(TripActivity::class);
+    }
 }
+
+
+

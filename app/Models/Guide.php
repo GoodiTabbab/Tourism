@@ -21,4 +21,14 @@ class Guide extends Model
         'image',
         'birth_date',
     ];
+ public function trip()
+    {
+        return $this->belongsTo(TripInformation::class, 'trip_id');
+    }
+
+    public function activity()
+    {
+        return $this->belongsTo(Activity::class, 'activity_id');
+    }
+
 }
